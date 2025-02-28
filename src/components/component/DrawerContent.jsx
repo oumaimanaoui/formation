@@ -63,7 +63,8 @@ function DrawerContent() {
             <span className="logo-text">MYDEV</span>
             <button className="close-button" onClick={toggleMenu}>Fermer</button>
           </div>
-          <nav>
+          <nav> 
+            
             <ul>
             <li><Link to="/">accueil</Link></li>
               <li><Link to="/">cours</Link></li>
@@ -75,7 +76,7 @@ function DrawerContent() {
       )}
       <div> <HeroContent/></div>
      {/* <div> <Categories/></div>*/}
-     {/* <div><PopularCourses/></div>*/}
+     <div><PopularCourses/></div>
       <div><Footerapp/> </div> 
      
     </header>

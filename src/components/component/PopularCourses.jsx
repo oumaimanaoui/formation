@@ -1,6 +1,6 @@
 import React from 'react';
 import CourseCard from './CourseCard';
-import './PopularCourses.css'; 
+import './PopularCourses.css';
 
 function PopularCourses() {
   const courses = [
@@ -10,7 +10,7 @@ function PopularCourses() {
       price: '149,00 $',
       rating: 5,
       ratingCount: 123,
-      image: './image9.png',
+      image: '/image10.png',
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ function PopularCourses() {
       price: '149,00 $',
       rating: 5,
       ratingCount: 123,
-      image: './image9.png',
+      image: '/image9.png',
     },
     {
       id: 3,
@@ -26,19 +26,19 @@ function PopularCourses() {
       price: '149,00 $',
       rating: 5,
       ratingCount: 123,
-      image: './image9.png',
+      image: '/image4.png',
     },
   ];
 
   return (
-    <div className="popular-courses">
-      <h2>Cours populaires</h2>
-      <div className="course-grid">
+    <section className="popular-courses">
+      <h2 className="popular-courses__title">Cours populaires</h2>
+      <div className="popular-courses__grid">
         {courses.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
