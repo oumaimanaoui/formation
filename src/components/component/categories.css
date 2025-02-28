@@ -1,0 +1,80 @@
+.category {
+  padding: 80px 0; /* Ajustez le padding selon vos besoins */
+}
+
+.category .section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.category .section-title::before,
+.category .section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: #007bff; /* Couleur primaire */
+  transform: translateY(-50%);
+}
+
+.category .section-title::before {
+  left: -40px;
+}
+
+.category .section-title::after {
+  right: -40px;
+}
+
+.category h1 {
+  font-size: 2.5rem; /* Ajustez la taille de la police selon vos besoins */
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.category .row.g-3 > div {
+  margin-bottom: 15px; /* Espacement entre les éléments */
+}
+
+.category .position-relative {
+  position: relative;
+  overflow: hidden;
+}
+
+.category .position-relative img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.category .position-relative:hover img {
+  transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+.category .bg-white.text-center.position-absolute {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+  padding: 15px;
+}
+
+.category .bg-white.text-center.position-absolute h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.category .bg-white.text-center.position-absolute small {
+  color: #007bff; /* Couleur primaire */
+}
+
+.category .col-lg-5.col-md-6.wow.zoomIn {
+  min-height: 350px;
+}
+
+.category .col-lg-5.col-md-6.wow.zoomIn img {
+    object-fit: cover;
+}

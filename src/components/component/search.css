@@ -1,0 +1,41 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    border-radius: 5px; /* Arrondit les coins */
+    overflow: hidden; /* Empêche l'icône de dépassement */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Ajuste l'espacement intérieur */
+  }
+  
+  .search-icon, .close-icon {
+    cursor: pointer;
+    padding: 5px; /* Ajoute un peu d'espace autour des icônes */
+    color: #777; /* Couleur des icônes */
+  }
+  
+  .search-bar input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  
+  .trending-searches {
+    padding: 10px;
+  }
+  
+  .trending-searches ul {
+    list-style: none; /* Enlève les puces */
+    padding: 0;
+  }
+  
+  .trending-searches li {
+    margin-bottom: 5px;
+  }

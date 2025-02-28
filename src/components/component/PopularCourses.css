@@ -1,0 +1,78 @@
+.course-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.course-image img {
+  width: 100%;
+  height: auto;
+}
+
+.course-details {
+  padding: 20px;
+}
+
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.course-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.learn-more {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.join-now {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.course-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.course-rating {
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.course-instructor {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.course-duration,
+.course-students {
+  margin-left: 10px;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;}
