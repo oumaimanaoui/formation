@@ -1,0 +1,105 @@
+.interface {
+  font-family: sans-serif;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer les éléments horizontalement */
+  width: 100%;
+  background-color: #fff0f0;
+  min-height: 8vh;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  /* Supprimer margin-right pour centrer le titre */
+}
+
+.logo img {
+  width: 50px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.logo span { /* Style pour le texte "Formation" */
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align:  center ;
+}
+
+.main-content {
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.formations {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.formation-card {
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.formation-card img {
+  width: 100%;
+  height: auto;
+  transition: border 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.formation-card div {
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out 0.4s;
+}
+
+/* Styles de focus */
+.formation-card div:focus-within,
+.nav a:focus {
+  outline: none;
+  border: 2px solid #007bff;
+}
+
+.formation-card img:focus {
+  outline: none;
+  border: 3px solid #007bff;
+}
+
+.formation-card:focus-within img {
+  outline: none;
+  border: 3px solid #007bff;
+}
+
+/* Styles de survol */
+.formation-card img:hover {
+  border: 2px solid #007bff;
+}
+
+/* Animation de fondu en entrée */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

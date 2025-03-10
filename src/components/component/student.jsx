@@ -1,132 +1,154 @@
 import React, { useState } from 'react';
-import './student.css'; // Importez le fichier CSS
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './student.css';
 
-function student() {
-    const [isLogin, setIsLogin] = useState(true); // État pour gérer l'affichage du formulaire
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        birthDate: '',
-        email: '', // Ajout de l'email pour l'inscription
-        password: '',
-        confirmPassword: '',
-        governorate: '',
-        grade: ''
-    });
+function Student() {
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+  });
+  const [registrationData, setRegistrationData] = useState({
+    firstName: '',
+    lastName: '',
+    age: '',
+    birthDate: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    country: '',
+    studyLevel: '',
+  });
+  const [errorMessage, setErrorMessage] = useState(''); // Pour afficher les messages d'erreur
+  const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  const handleLoginChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Ici, vous pouvez gérer la logique d'inscription ou de connexion
-        console.log(formData); // Affiche les données du formulaire
-    };
+  const handleRegistrationChange = (e) => {
+    setRegistrationData({ ...registrationData, [e.target.name]: e.target.value });
+  };
 
-    const handleLoginClick = () => {
-        setIsLogin(true); // Afficher l'interface de connexion
-    };
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage(''); // Réinitialiser le message d'erreur
+    try {
+      const response = await axios.post('http://localhost:3000/auth/login', {
+        email: loginData.email,
+        password: loginData.password,
+      });
+      localStorage.setItem('token', response.data.access_token);
 
-    const handleSignUpClick = () => {
-        setIsLogin(false); // Afficher l'interface d'inscription
-    };
+      // Récupérer les informations de l'utilisateur
+      const userResponse = await axios.get('http://localhost:3000/users/me', {
+        headers: {
+          Authorization: `Bearer ${response.data.access_token}`,
+        },
+      });
 
-    return (
-        <div className="container"> {/* Ajout d'un conteneur principal */}
-            {isLogin ? (
-                <div className="login-container">
-                    <h2>Se connecter</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-group">
-                            <label htmlFor="email">Numéro de téléphone ou email *</label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email" // Ajout du name pour le formulaire de connexion
-                                value={formData.email} // Utilisation de formData pour l'email
-                                onChange={handleChange} // Utilisation de handleChange
-                                required
-                            />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="password">Mot de passe *</label>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password" // Ajout du name pour le formulaire de connexion
-                                value={formData.password} // Utilisation de formData pour le mot de passe
-                                onChange={handleChange} // Utilisation de handleChange
-                                required
-                            />
-                        </div>
-                        <a href="#" className="forgot-password">Mot de passe oublié ?</a>
-                        <button type="submit" className="login-button">Se connecter</button>
-                    </form>
-                    <p className="create-account">
-                        Vous n'avez pas de compte? <a href="#" onClick={handleSignUpClick}>Créez un nouveau compte</a>
-                    </p>
-                </div>
-            ) : (
-                <div className="signup-container">
-                    <h2>Créer un compte</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-group">
-                            <label htmlFor="firstName">Prénom *</label>
-                            <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="lastName">Nom *</label>
-                            <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="phone">Numéro de téléphone *</label>
-                            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="birthDate">Date de naissance *</label>
-                            <input type="date" id="birthDate" name="birthDate" value={formData.birthDate} onChange={handleChange} required />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="email">Email *</label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="password">Mot de passe *</label>
-                            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required minLength="8" />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="confirmPassword">Confirmez le mot de passe *</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required minLength="8" />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="governorate">Choisissez votre gouvernorat *</label>
-                            <select id="governorate" name="governorate" value={formData.governorate} onChange={handleChange} required>
-                                <option value="">Sélectionnez un gouvernorat</option>
-                                <option value="Tunis">Tunis</option>
-                                <option value="Ariana">Ariana</option>
-                                {/* Ajoutez d'autres gouvernorats ici */}
-                            </select>
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="grade">Choisissez votre classe *</label>
-                            <select id="grade" name="grade" value={formData.grade} onChange={handleChange} required>
-                                <option value="">Sélectionnez une classe</option>
-                                <option value="1ère année">1ère année</option>
-                                <option value="2ème année">2ème année</option>
-                                {/* Ajoutez d'autres classes ici */}
-                            </select>
-                        </div>
-                        <button type="submit">Créer un compte</button>
-                    </form>
-                    <p>
-                        Déjà un compte ? <a href="#" onClick={handleLoginClick}>Se connecter</a>
-                    </p>
-                </div>
-            )}
+      if (userResponse.data) {
+        navigate('/');
+      } else {
+        // Afficher un message d'erreur si l'utilisateur n'existe pas
+        setErrorMessage("L'utilisateur n'existe pas dans MongoDB");
+      }
+    } catch (error) {
+      // Afficher un message d'erreur générique en cas d'erreur de connexion
+      setErrorMessage('Erreur de connexion. Veuillez vérifier vos identifiants.');
+    }
+  };
+
+  const handleRegistrationSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage(''); // Réinitialiser le message d'erreur
+
+    if (registrationData.password !== registrationData.confirmPassword) {
+      setErrorMessage('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
+    const age = parseInt(registrationData.age);
+    if (isNaN(age) || age > 18) {
+      setErrorMessage('L\'âge doit être un nombre inférieur ou égal à 18.');
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:3003/auth/register', registrationData);
+      // Afficher un message de succès
+      setErrorMessage('Compte créé avec succès !');
+      // Rediriger vers la page de connexion après l'inscription
+      setIsRegistering(false);
+      setLoginData({ email: registrationData.email, password: registrationData.password });
+    } catch (err) {
+      // Afficher un message d'erreur générique en cas d'erreur d'inscription
+      if (err.response && err.response.data && err.response.data.message) {
+        setErrorMessage(err.response.data.message);
+      } else {
+        setErrorMessage('Erreur d\'inscription.');
+      }
+    }
+  };
+
+  const toggleRegistering = () => {
+    setIsRegistering(!isRegistering);
+    setErrorMessage(''); // Réinitialiser le message d'erreur
+  };
+
+  return (
+    <div className="auth-container">
+      {isRegistering ? (
+        <div className="signup-form">
+          <h2>Créer un compte</h2>
+          <form onSubmit={handleRegistrationSubmit}>
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom *" value={registrationData.firstName} onChange={handleRegistrationChange} required />
+            <input type="text" id="lastName" name="lastName" placeholder="Nom *" value={registrationData.lastName} onChange={handleRegistrationChange} required />
+            <input type="number" id="age" name="age" placeholder="Âge *" value={registrationData.age} onChange={handleRegistrationChange} required />
+            <input type="date" id="birthDate" name="birthDate" placeholder="Date de naissance *" value={registrationData.birthDate} onChange={handleRegistrationChange} required />
+            <input type="email" id="email" name="email" placeholder="Email *" value={registrationData.email} onChange={handleRegistrationChange} required />
+            <input type="password" id="password" name="password" placeholder="Mot de passe *" value={registrationData.password} onChange={handleRegistrationChange} required minLength="8" />
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmez le mot de passe *" value={registrationData.confirmPassword} onChange={handleRegistrationChange} required minLength="8" />
+            <select id="country" name="country" value={registrationData.country} onChange={handleRegistrationChange} required>
+              <option value="">Sélectionnez un pays</option>
+              <option value="Tunisie">Tunisie</option>
+              <option value="France">France</option>
+              <option value="USA">USA</option>
+            </select>
+            <select id="studyLevel" name="studyLevel" value={registrationData.studyLevel} onChange={handleRegistrationChange} required>
+              <option value="">Sélectionnez un niveau d'étude</option>
+              <option value="Primaire">Primaire</option>
+              <option value="Collège">Collège</option>
+              <option value="Lycée">Lycée</option>
+              <option value="Université">Université</option>
+            </select>
+            <button type="submit">Créer un compte</button>
+          </form>
+          <p>
+            Déjà un compte ? <a href="#" onClick={toggleRegistering}>Se connecter</a>
+          </p>
+          {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Afficher le message d'erreur */}
         </div>
-    );
+      ) : (
+        <div className="login-form">
+          <div className="avatar">
+            <img src="utilisateur.png" alt="Avatar" />
+          </div>
+          <h2>Connexion</h2>
+          <form onSubmit={handleLoginSubmit}>
+            <input type="email" placeholder="Email" name="email" value={loginData.email} onChange={handleLoginChange} />
+            <input type="password" placeholder="Mot de passe" name="password" value={loginData.password} onChange={handleLoginChange} />
+            <button type="submit">Se connecter</button>
+          </form>
+          <p>
+            Pas de compte? <a href="#" onClick={toggleRegistering}>S'inscrire</a>
+          </p>
+          {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Afficher le message d'erreur */}
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default student;
+export default Student;
