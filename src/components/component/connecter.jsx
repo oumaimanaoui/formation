@@ -1,7 +1,7 @@
 import React from 'react';
 import './connecter.css';
 
-function connecter() {
+function Connecter() {
   const handleStudentClick = () => {
     window.open('/student', '_blank'); // Opens in a new tab
   };
@@ -14,29 +14,20 @@ function connecter() {
     <div className="login-container">
       <div className="login-box">
         <div className="login-content">
-          <div className="login-image">
-            <img src="images2.jpg" alt="Logo" />
-          </div>
           <div className="login-form">
             <h2>تسجيل الدخول</h2>
-            <p>تهنى على قرايتك</p>
+            <p>لديك الخيار بين حساب الولي أو التلميذ.</p>
 
             <div className="user-types">
-              <div className="user-type">
-                
-                <button onClick={handleStudentClick}>student</button>
+              <div className="user-type" onClick={handleTeacherClick}>
                 <img src="eleve.png" alt="Student Icon" />
+                <p>تلميذ</p>
               </div>
-              <div className="user-type">
-                
-                <button onClick={handleTeacherClick}>professeur</button>
+              <div className="user-type" onClick={handleStudentClick}>
                 <img src="proffeseur.png" alt="professeur Icon" />
-                <button className="return-button">الرجوع إلى الصفحة الرئيسية</button>
+                <p>ولي</p>
               </div>
             </div>
-          </div>
-          <div>
-          <button className="return-button">الرجوع إلى الصفحة الرئيسية</button>
           </div>
         </div>
       </div>
@@ -44,4 +35,4 @@ function connecter() {
   );
 }
 
-export default connecter;
+export default Connecter;

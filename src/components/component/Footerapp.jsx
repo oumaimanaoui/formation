@@ -18,7 +18,8 @@ function Footerapp() {
           <a href="tel:+21655848382" className="phone-number">+216 55 848 382</a> | 
           <span className="contact-text">Contactez-nous</span>
           <a href="mailto:nextedge@youbi.tn" className="email">nextedge@youbi.tn</a> | 
-          <a href="#" className="social-link"><img src="/facebook.png" alt="Facebook" className="social-icon" /></a>
+         
+          <a href="#" className="social-link"><img src="/pagee.png" alt="Facebook" className="social-icon" /></a>
           <a href="#" className="social-link"><img src="/linkedin.png" alt="LinkedIn" className="social-icon" /></a>
           <a href="#" className="social-link"><img src="/instagram.png" alt="Instagram" className="social-icon" /></a>
           <span className="follow-text">Suivez-nous</span>

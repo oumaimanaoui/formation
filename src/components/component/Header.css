@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #007bff; /* Nouvelle couleur primaire */
+  --secondary-color: #867373; /* Nouvelle couleur secondaire */
+  --light-color: hsl(0, 0%, 0%); /* Couleur claire */
+  --dark-color: #28292b; /* Couleur sombre */
+}
+
+.header {
+  width: 100%;
+  background-color: var(--light-color);
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.menu-icon,
+.user-actions a,
+.search-icon {
+  margin-left: 10px; /* Espacement entre les éléments du menu */
+  cursor: pointer; /* Curseur de pointeur pour indiquer que c'est cliquable */
+  display: flex; /* Pour aligner l'icône et le texte */
+  align-items: center; /* Alignement vertical au centre */
+}
+
+.menu-icon svg,
+.user-actions svg {
+  font-size: 1.2em; /* Taille des icônes */
+}
+
+.logo img {
+  max-height: 50px;
+  position: absolute;
+  display: block; /* Transforme l'image en élément de bloc */
+  width: 50%; /* Définit la largeur de l'image (adaptez selon vos besoins) */
+  margin: 0 auto; /* Centre l'image */
+  text-align: center;
+
+
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.search-input {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles pour le drawer de recherche */
+.search-drawer {
+  position: fixed;
+  top: 60px; /* Ajustez selon la hauteur de votre header */
+  left: 0;
+  width: 100%; /* Ou une largeur spécifique */
+  height: 100%; /* Ou une hauteur spécifique */
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ... (les autres styles CSS) */
+
+.search-drawer-header .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em; /* Ajustez la taille de l'icône si nécessaire */
+  color: black; /* Ajout de la couleur noire */
+}
+
+/* Styles pour le drawer du menu (identiques à ceux du drawer de recherche) */
+.drawer {
+  position: fixed;
+  top: 60px; /* Ajustez selon la hauteur de votre header */
+  left: 0;
+  width: 250px; /* Ou une largeur spécifique */
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.drawer-header .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.drawer nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.drawer nav li {
+  margin-bottom: 10px;
+}
+
+.drawer nav a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+@media (max-width: 768px) {
+  .top-bar .container {
+    padding: 0 10px;
+  }
+}

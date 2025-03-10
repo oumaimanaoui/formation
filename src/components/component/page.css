@@ -2,179 +2,182 @@
 
 /* Styles généraux */
 body {
-    font-family: sans-serif; /* Choisissez la police de caractères de votre choix */
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1200px; /* Largeur maximale du contenu */
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Barre de navigation (top-bar) */
-  .top-bar {
-    background-color: #f0f0f0; /* Couleur de fond de la barre de navigation */
-    padding: 10px 0;
-  }
-  
-  .top-bar .container {
-    display: flex;
-    justify-content: space-between; /* Aligner les éléments à gauche et à droite */
-    align-items: center;
-  }
-  
-  .menu {
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: #333; /* Couleur du texte du menu */
-    margin-right: 20px;
-  }
-  
-  .logo img {
-    max-height: 100px; /* Hauteur maximale du logo */
-  }
-  
-  .user-actions {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-actions div {
-    margin-left: 20px;
-  }
-  
-  .user-actions a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-actions svg {
-    margin-right: 5px;
-  }
-  
-  /* Section héros (hero) */
-  .hero {
-    background-image: url("hero-background.jpg"); /* Image de fond de la section héros */
-    background-size: cover;
-    background-position: center;
-    color: white; /* Couleur du texte de la section héros */
-    padding: 200px 0;
-  }
-  
-  .hero-content {
-    display: flex;
-    flex-direction: column; /* Aligner les éléments verticalement */
-    align-items: center;
-    text-align: center;
-  }
-  
-  .hero-image img {
-    max-width: 1000px; /* Largeur maximale de l'image de héros */
-    margin-bottom: 200px;
-  }
-  
-  .hero-text h1 {
-    font-size: 5em;
-    margin-bottom: 20px;
-  }
-  
-  .hero-text p {
-    font-size: 1.2em;
-    line-height: 1.5;
-  }
-  .bouton-personnalise {
-    background-color: #494247; /* Couleur de fond bleu */
-    color: white; /* Couleur du texte en blanc */
-    padding: 15px 30px; /* Marge intérieure plus grande */
-    border: none; /* Pas de bordure */
-    cursor: pointer; /* Curseur de la souris au survol */
-    font-size: 1.2em; /* Taille de la police plus grande */
-    border-radius: 3px; /* Bords légèrement arrondis */
-    transition: background-color 0.3s ease; /* Transition douce pour la couleur de fond */
-    text-align: left
-    /* Ajoutez d'autres styles spécifiques si nécessaire */
-  }
-  
-  .bouton-personnalise:hover {
-    background-color: #f9fafb; /* Couleur de fond bleu plus foncé au survol */
-    
-  }
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .hero-content {
-    text-align: center;
-    max-width: 800px;
-  }
-  
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Assure que le body prend toute la largeur */
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur et la hauteur */
+}
+
+/* Barre de navigation (top-bar) */
+.top-bar {
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  width: 100%; /* Prend toute la largeur */
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 20px;
+}
+
+.logo img {
+  max-height: 100px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions div {
+  margin-left: 20px;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.user-actions svg {
+  margin-right: 5px;
+}
+
+/* Section héros (hero) */
+.hero {
+  width: 100%; /* Prend toute la largeur */
+  min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6; /* Améliore la lisibilité */
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-text {
+  font-size: 16px;
+  margin: 0 20px;
+  max-width: 600px;
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+}
+
+.learn-button,
+.join-button {
+  padding: 12px 30px;
+  margin: 10px 15px; /* Ajoute une marge verticale pour les écrans plus petits */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.learn-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.join-button {
+  background-color: #f0f0f0;
+}
+
+.bouton-personnalise {
+  background-color: #494247;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  text-align: center; /* Centre le texte */
+  margin-top: 20px; /* Ajoute une marge au-dessus du bouton */
+}
+
+.bouton-personnalise:hover {
+  background-color: #f9fafb;
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
+      font-size: 28px;
   }
-  
+
   .hero-text {
-    font-size: 18px;
-    margin-bottom: 30px;
+      font-size: 16px;
   }
-  
-  .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .carousel-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-  }
-  
+
   .carousel-text {
-    font-size: 16px;
-    margin: 0 20px;
-    max-width: 600px;
+      font-size: 14px;
   }
-  
-  .hero-buttons {
-    display: flex;
-    justify-content: center;
+
+  .menu a {
+      margin-right: 10px;
   }
-  
-  .learn-button,
-  .join-button {
-    padding: 12px 30px;
-    margin: 0 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+
+  .user-actions div {
+      margin-left: 10px;
   }
-  
-  .learn-button {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .join-button {
-    background-color: #f0f0f0;
-  }
+}

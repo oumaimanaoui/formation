@@ -1,0 +1,79 @@
+/* cours.css */
+
+.interface-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 100%; /* L'image prend toute la largeur de l'écran */
+    margin: 0 auto;
+  }
+  
+  .header {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #f7fcfc;
+    min-height: 1vh;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    color: #0b0b0b;
+    margin: 0 15px;
+  }
+  
+  .navigation a.facebook-icon {
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  .content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .text-content {
+    margin-bottom: 20px;
+  }
+  
+  .image-with-button {
+    position: relative;
+    display: inline-block; /* Pour que l'image ne prenne que la largeur nécessaire */
+  }
+  
+  .content-image {
+    width: 100%; 
+    height: auto;
+    display: block;
+  }
+  
+  .formation-button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #9ea0a3;
+    color: white;
+    padding: 8px 16px; /* Taille du bouton réduite */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Taille de la police réduite */
+    white-space: nowrap; /* Empêche le texte du bouton de passer à la ligne */
+    width: 20%; 
+  
+    /* Styles pour modifier le format du bouton */
+    border-radius: 20px; /* Bords arrondis */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+    /* Ajoutez d'autres styles selon vos préférences */
+  }
+  
+  .formation-button:hover {
+    background-color: #0056b3;
+  }
