@@ -65,8 +65,8 @@ import React, { useState } from 'react';
            <nav>
              <ul>
                <li><Link to="/accueil">accueil</Link></li> {/* Lien vers la page d'accueil */}
-               <li><Link to="/cours">cours</Link></li> {/* Lien vers la page des cours */}
-               <li><Link to="/formation">formation</Link></li> {/* Lien vers la page de formation */}
+               <li><Link to="/formations">formations</Link></li> {/* Lien vers la page des cours */}
+               <li><Link to="/cours">cours</Link></li> {/* Lien vers la page de formation */}
                {/* Ajoutez d'autres éléments de menu ici */}
              </ul>
            </nav>

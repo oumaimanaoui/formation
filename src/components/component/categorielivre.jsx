@@ -1,7 +1,7 @@
 import React from 'react';
-import './categories.css';
+import './categorielivre.css';
 
-function Categories() {
+function Categorielivre() {
   const categories = [
     {
       id: 1,
@@ -54,4 +54,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default Categorielivre;
