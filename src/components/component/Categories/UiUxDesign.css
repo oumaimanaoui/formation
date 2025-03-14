@@ -1,0 +1,116 @@
+.shopping-cart {
+    width: 80%;
+    margin: 40px auto;
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  .shopping-cart h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .cart-items {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .cart-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    padding: 15px;
+    background-color: #f8f8f8;
+    font-weight: 600;
+  }
+  
+  .cart-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+  }
+  
+  .item-image img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .coupon-code {
+    display: flex;
+    align-items: center; /* Ajout d'alignement vertical */
+  }
+  
+  .coupon-code input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .coupon-code button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .update-checkout {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Ajout d'une marge à gauche pour l'espace */
+  }
+  
+  .update-checkout button {
+    padding: 12px 25px;
+    background-color: #131314;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .update-checkout button:first-child {
+    margin-right: 10px;
+  }
+  
+  .cart-totals {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .cart-totals h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .totals {
+    margin-top: 15px;
+  }
+  
+  .totals div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .return-to-shop {
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+  }

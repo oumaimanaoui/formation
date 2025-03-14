@@ -69,14 +69,9 @@ const courses = [
 
 function HtmlFormation() {
   const navigate = useNavigate();
-  const [selectedCourse, setSelectedCourse] = useState(null);
-
-  const handleReturnHome = () => {
-    navigate('/DrawerContent');
-  };
 
   const handleCourseClick = (course) => {
-    setSelectedCourse(course);
+    navigate('/UiUxDesign', { state: { product: course } });
   };
 
   return (
@@ -89,14 +84,13 @@ function HtmlFormation() {
             <img src={course.image} alt={course.teacher} />
             <p>Teacher: {course.teacher}</p>
             <p>Price: ${course.price}</p>
-            <Link to={course.link}><button>Acheter</button></Link>
+            <button>Acheter</button>
           </div>
         ))}
       </div>
-      <button className="return-button" onClick={handleReturnHome}>
-        Retour à l'accueil
-      </button>
-      {selectedCourse && <Cart selectedCourse={selectedCourse} />}
+      <Link to="/cours" className="return-to-shop">
+        ← Retour à la accueil
+      </Link>
     </div>
   );
 }

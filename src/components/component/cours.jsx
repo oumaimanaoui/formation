@@ -42,7 +42,7 @@ const formations = [
   },
   {
     image: "/progc.png",
-    title: "Formation React pour débutants",
+    title: "Formation C++ pour débutants",
     description: "Apprenez à construire des interfaces utilisateur dynamiques avec la bibliothèque React.",
     link: "/formation/react",
   },
@@ -60,8 +60,8 @@ const formations = [
   },
   {
     image: "/calgo.png",
-    title: "Formation c pour débutants",
-    description: "Découvrez c et apprenez à développer des applications côté serveur en JavaScript.",
+    title: "Formation C pour débutants",
+    description: "Découvrez C et apprenez à développer des applications côté serveur en JavaScript.",
     link: "/formation/nodejs",
   },
 ];
