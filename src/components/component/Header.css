@@ -1,13 +1,13 @@
 :root {
-  --primary-color: #007bff; /* Nouvelle couleur primaire */
-  --secondary-color: #867373; /* Nouvelle couleur secondaire */
+  --primary-color: #4707f7; /* Nouvelle couleur primaire */
+  --secondary-color: #504f4f; /* Nouvelle couleur secondaire */
   --light-color: hsl(0, 0%, 0%); /* Couleur claire */
-  --dark-color: #28292b; /* Couleur sombre */
+  --dark-color: #9d9fa1; /* Couleur sombre */
 }
 
 .header {
   width: 100%;
-  background-color: var(--light-color);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 10px 0;
   box-sizing: border-box;
 }
@@ -36,10 +36,10 @@
 }
 
 .logo img {
-  max-height: 50px;
+  max-height: 70px;
   position: absolute;
   display: block; /* Transforme l'image en élément de bloc */
-  width: 50%; /* Définit la largeur de l'image (adaptez selon vos besoins) */
+  width: 70%; /* Définit la largeur de l'image (adaptez selon vos besoins) */
   margin: 0 auto; /* Centre l'image */
   text-align: center;
 
